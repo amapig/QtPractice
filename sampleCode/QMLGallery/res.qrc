@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>pics/QtQuick2Test80.png</file>
+        <file>pics/VideoPlayer_48.png</file>
+    </qresource>
+</RCC>

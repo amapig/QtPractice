@@ -1,0 +1,46 @@
+<RCC>
+    <qresource prefix="/">
+        <file>declarative-camera.qml</file>
+        <file>CameraPropertyPopup.qml</file>
+        <file>CaptureControls.qml</file>
+        <file>PhotoPreview.qml</file>
+        <file>ZoomControl.qml</file>
+        <file>ImageButton.qml</file>
+        <file>TopPane.qml</file>
+        <file>BottomPane.qml</file>
+        <file>QuickSettingsPane.qml</file>
+        <file>CameraPropertyButton.qml</file>
+        <file>CameraPropertyModel.qml</file>
+        <file>images/camera_camera_setting.png</file>
+        <file>images/icon-m-camera-flash-auto-screen.svg</file>
+        <file>images/icon-m-camera-flash-off-screen.svg</file>
+        <file>images/icon-m-camera-flash-always-screen.svg</file>
+        <file>images/icon-m-camera-flash-red-eye-screen.svg</file>
+        <file>images/icon-m-camera-whitebalance-auto-screen.svg</file>
+        <file>images/icon-m-camera-whitebalance-fluorescent-screen.svg</file>
+        <file>images/icon-m-camera-whitebalance-cloudy-screen.svg</file>
+        <file>images/icon-m-camera-whitebalance-sunny-screen.svg</file>
+        <file>images/icon-m-camera-whitebalance-tungsten-screen.svg</file>
+        <file>images/icon-m-toolbar-delete.svg</file>
+        <file>images/icon-m-toolbar-camera.svg</file>
+        <file>images/icon-m-camera-ongoing-recording.svg</file>
+        <file>images/icon-m-camera-pause.svg</file>
+        <file>images/icon-m-camera-pause-indication.svg</file>
+        <file>images/icon-m-camera-video-record.svg</file>
+        <file>images/icon-m-camera-video.svg</file>
+        <file>images/icon-m-toolbar-gallery.svg</file>
+        <file>images/icon-m-camera-exposure-0.svg</file>
+        <file>images/icon-m-camera-exposure-minus1.svg</file>
+        <file>images/icon-m-camera-exposure-minus2.svg</file>
+        <file>images/icon-m-camera-exposure-minus03.svg</file>
+        <file>images/icon-m-camera-exposure-minus07.svg</file>
+        <file>images/icon-m-camera-exposure-minus13.svg</file>
+        <file>images/icon-m-camera-exposure-minus17.svg</file>
+        <file>images/icon-m-camera-exposure-plus1.svg</file>
+        <file>images/icon-m-camera-exposure-plus2.svg</file>
+        <file>images/icon-m-camera-exposure-plus03.svg</file>
+        <file>images/icon-m-camera-exposure-plus07.svg</file>
+        <file>images/icon-m-camera-exposure-plus13.svg</file>
+        <file>images/icon-m-camera-exposure-plus17.svg</file>
+    </qresource>
+</RCC>

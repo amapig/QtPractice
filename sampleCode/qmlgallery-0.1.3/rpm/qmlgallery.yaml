@@ -1,0 +1,35 @@
+Name:  qmlgallery
+Summary: Photo Gallery for Nemo
+Version: 0.1.0
+Release: 1
+Group: Applications/System
+License: BSD
+URL: https://github.com/nemomobile/qmlgallery
+Sources:
+- "%{name}-%{version}.tar.bz2"
+Description: Photo Gallery application using Qt Quick for Nemo Mobile.
+Configure: none
+Builder: qmake
+Obsoletes:
+    - meego-handset-video <= 0.2.5
+Provides:
+    - meego-handset-video > 0.2.5
+
+PkgConfigBR:
+    - QtCore >= 4.7.0
+    - QtDeclarative
+    - QtGui
+    - qdeclarative-boostable
+    - QtOpenGL
+    - libresourceqt1
+Requires:
+    - qt-components >= 1.4.8
+    - libdeclarative-gallery
+    - libdeclarative-multimedia
+    - nemo-qml-plugin-thumbnailer
+ 
+Files:
+    - "%{_bindir}/qmlgallery"
+    - "%{_datadir}/applications/qmlgallery.desktop"
+    - "%{_libdir}/qt4/imports/org/nemomobile/qmlgallery/*"
+

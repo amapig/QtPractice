@@ -1,0 +1,7 @@
+
+[Desktop Entry]
+Type=Application
+Name=Camera
+Icon=icons-Applications-camera
+Exec=meego-handset-camera
+X-Desktop-File-Install-Version=0.16

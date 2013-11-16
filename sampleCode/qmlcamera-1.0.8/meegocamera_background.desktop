@@ -1,0 +1,6 @@
+
+[Desktop Entry]
+Type=Application
+Name=meego-handset-camera
+Exec=meego-handset-camera -background
+Comment=MeeGo handset camera background launch in boot
