@@ -1,6 +1,9 @@
 QtPractice
 ==========
-exercise:
+###Exercise:
+
   My test applications;
-sampleCode:
+  
+###SampleCode:
+
   Some useful demos/examples that download from net/Qt sdk.
