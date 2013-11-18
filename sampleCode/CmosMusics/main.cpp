@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 
 
     //FillMediaList(musicPath, playQueue);
-    FillMediaList("/home/skytree/Music", playQueue);
+    FillMediaList("/home/mengcong/Music/mp3", playQueue);
     playQueue->setCurrentIndex(0);
     player.setModel(playQueue);
 /*
