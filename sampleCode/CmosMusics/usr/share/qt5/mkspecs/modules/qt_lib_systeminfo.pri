@@ -1,0 +1,17 @@
+QT.systeminfo.VERSION = 0.0.0
+QT.systeminfo.MAJOR_VERSION = 0
+QT.systeminfo.MINOR_VERSION = 0
+QT.systeminfo.PATCH_VERSION = 0
+QT.systeminfo.name = QtSystemInfo
+QT.systeminfo.bins = $$QT_MODULE_BIN_BASE
+QT.systeminfo.includes = $$QT_MODULE_INCLUDE_BASE $$QT_MODULE_INCLUDE_BASE/QtSystemInfo
+QT.systeminfo.private_includes = $$QT_MODULE_INCLUDE_BASE/QtSystemInfo/0.0.0  $$QT_MODULE_INCLUDE_BASE/QtSystemInfo/0.0.0/QtSystemInfo
+QT.systeminfo.libs = $$QT_MODULE_LIB_BASE
+QT.systeminfo.libexecs = $$QT_MODULE_LIBEXEC_BASE
+QT.systeminfo.rpath = /usr/lib
+QT.systeminfo.plugins = $$QT_MODULE_PLUGIN_BASE
+QT.systeminfo.imports = $$QT_MODULE_IMPORT_BASE
+QT.systeminfo.qml = $$QT_MODULE_QML_BASE
+QT.systeminfo.depends = core network gui
+QT.systeminfo.DEFINES = QT_SYSTEMINFO_LIB
+QT_MODULES += systeminfo

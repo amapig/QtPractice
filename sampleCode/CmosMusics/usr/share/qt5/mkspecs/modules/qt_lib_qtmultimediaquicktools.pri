@@ -1,0 +1,17 @@
+QT.qtmultimediaquicktools.VERSION = 5.0.2
+QT.qtmultimediaquicktools.MAJOR_VERSION = 5
+QT.qtmultimediaquicktools.MINOR_VERSION = 0
+QT.qtmultimediaquicktools.PATCH_VERSION = 2
+QT.qtmultimediaquicktools.name = QtMultimediaQuick_p
+QT.qtmultimediaquicktools.bins = $$QT_MODULE_BIN_BASE
+QT.qtmultimediaquicktools.includes = $$QT_MODULE_INCLUDE_BASE $$QT_MODULE_INCLUDE_BASE/QtMultimediaQuick_p
+QT.qtmultimediaquicktools.private_includes = $$QT_MODULE_INCLUDE_BASE/QtMultimediaQuick_p/5.0.2  $$QT_MODULE_INCLUDE_BASE/QtMultimediaQuick_p/5.0.2/QtMultimediaQuick_p
+QT.qtmultimediaquicktools.libs = $$QT_MODULE_LIB_BASE
+QT.qtmultimediaquicktools.libexecs = $$QT_MODULE_LIBEXEC_BASE
+QT.qtmultimediaquicktools.rpath = /usr/lib
+QT.qtmultimediaquicktools.plugins = $$QT_MODULE_PLUGIN_BASE
+QT.qtmultimediaquicktools.imports = $$QT_MODULE_IMPORT_BASE
+QT.qtmultimediaquicktools.qml = $$QT_MODULE_QML_BASE
+QT.qtmultimediaquicktools.depends = core quick multimedia
+QT.qtmultimediaquicktools.DEFINES = QT_QTMULTIMEDIAQUICKTOOLS_LIB
+QT_MODULES += qtmultimediaquicktools

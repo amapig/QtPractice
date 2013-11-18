@@ -1,0 +1,17 @@
+QT.qmldevtools.VERSION = 5.0.2
+QT.qmldevtools.MAJOR_VERSION = 5
+QT.qmldevtools.MINOR_VERSION = 0
+QT.qmldevtools.PATCH_VERSION = 2
+QT.qmldevtools.name = QtQmlDevTools
+QT.qmldevtools.bins = $$QT_MODULE_BIN_BASE
+QT.qmldevtools.includes = $$QT_MODULE_INCLUDE_BASE $$QT_MODULE_INCLUDE_BASE/QtQmlDevTools
+QT.qmldevtools.private_includes = $$QT_MODULE_INCLUDE_BASE/QtQmlDevTools/5.0.2  $$QT_MODULE_INCLUDE_BASE/QtQmlDevTools/5.0.2/QtQmlDevTools
+QT.qmldevtools.libs = $$QT_MODULE_LIB_BASE
+QT.qmldevtools.libexecs = $$QT_MODULE_LIBEXEC_BASE
+QT.qmldevtools.plugins = $$QT_MODULE_PLUGIN_BASE
+QT.qmldevtools.imports = $$QT_MODULE_IMPORT_BASE
+QT.qmldevtools.qml = $$QT_MODULE_QML_BASE
+QT.qmldevtools.depends = core
+QT.qmldevtools.module_config = staticlib
+QT.qmldevtools.DEFINES = QT_QMLDEVTOOLS_LIB
+QT_MODULES += qmldevtools

@@ -1,0 +1,17 @@
+QT.contacts.VERSION = 5.0.0
+QT.contacts.MAJOR_VERSION = 5
+QT.contacts.MINOR_VERSION = 0
+QT.contacts.PATCH_VERSION = 0
+QT.contacts.name = QtContacts
+QT.contacts.bins = $$QT_MODULE_BIN_BASE
+QT.contacts.includes = $$QT_MODULE_INCLUDE_BASE $$QT_MODULE_INCLUDE_BASE/QtContacts
+QT.contacts.private_includes = $$QT_MODULE_INCLUDE_BASE/QtContacts/5.0.0  $$QT_MODULE_INCLUDE_BASE/QtContacts/5.0.0/QtContacts
+QT.contacts.libs = $$QT_MODULE_LIB_BASE
+QT.contacts.libexecs = $$QT_MODULE_LIBEXEC_BASE
+QT.contacts.rpath = /usr/lib
+QT.contacts.plugins = $$QT_MODULE_PLUGIN_BASE
+QT.contacts.imports = $$QT_MODULE_IMPORT_BASE
+QT.contacts.qml = $$QT_MODULE_QML_BASE
+QT.contacts.depends = core
+QT.contacts.DEFINES = QT_CONTACTS_LIB
+QT_MODULES += contacts

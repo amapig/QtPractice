@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Music
+Comment=Nemo Mobile Music Player
+Exec=/usr/bin/invoker --single-instance -r 5 --type=qtcomponents-qt5 /opt/qmlmediaplayer/bin/qmlmediaplayer
+Icon=qmlmediaplayer
+Categories=AudioVideo;Audio;
+MimeType=audio/*;
+Name[zh_CN]=cmosplayer.desktop

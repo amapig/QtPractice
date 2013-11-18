@@ -1,0 +1,17 @@
+QT.versitorganizer.VERSION = 5.0.0
+QT.versitorganizer.MAJOR_VERSION = 5
+QT.versitorganizer.MINOR_VERSION = 0
+QT.versitorganizer.PATCH_VERSION = 0
+QT.versitorganizer.name = QtVersitOrganizer
+QT.versitorganizer.bins = $$QT_MODULE_BIN_BASE
+QT.versitorganizer.includes = $$QT_MODULE_INCLUDE_BASE $$QT_MODULE_INCLUDE_BASE/QtVersitOrganizer
+QT.versitorganizer.private_includes = $$QT_MODULE_INCLUDE_BASE/QtVersitOrganizer/5.0.0  $$QT_MODULE_INCLUDE_BASE/QtVersitOrganizer/5.0.0/QtVersitOrganizer
+QT.versitorganizer.libs = $$QT_MODULE_LIB_BASE
+QT.versitorganizer.libexecs = $$QT_MODULE_LIBEXEC_BASE
+QT.versitorganizer.rpath = /usr/lib
+QT.versitorganizer.plugins = $$QT_MODULE_PLUGIN_BASE
+QT.versitorganizer.imports = $$QT_MODULE_IMPORT_BASE
+QT.versitorganizer.qml = $$QT_MODULE_QML_BASE
+QT.versitorganizer.depends = core versit organizer
+QT.versitorganizer.DEFINES = QT_VERSITORGANIZER_LIB
+QT_MODULES += versitorganizer

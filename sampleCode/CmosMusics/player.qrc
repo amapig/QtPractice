@@ -1,0 +1,31 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>image/apple.png</file>
+        <file>image/folder.png</file>
+        <file>image/next_1.png</file>
+        <file>image/next_2.png</file>
+        <file>image/pause_1.png</file>
+        <file>image/pause_2.png</file>
+        <file>image/play_1.png</file>
+        <file>image/play_2.png</file>
+        <file>image/previous_1.png</file>
+        <file>image/previous_2.png</file>
+        <file>image/panel.png</file>
+        <file>image/back.png</file>
+        <file>image/menu.png</file>
+        <file>image/nocover.png</file>
+        <file>image/playing_bg.png</file>
+    </qresource>
+    <qresource prefix="/qml">
+        <file>qml/Mainpage.qml</file>
+        <file>qml/Musiclist.qml</file>
+        <file>qml/PlayerControls.qml</file>
+        <file>qml/Playing.qml</file>
+        <file>qml/ImageButton.qml</file>
+        <file>qml/ProgressBar.qml</file>
+        <file>qml/InfoPlayerPanel.qml</file>
+        <file>qml/Titlebar.qml</file>
+        <file>qml/main.qml</file>
+        <file>qml/TimeBar.qml</file>
+    </qresource>
+</RCC>
