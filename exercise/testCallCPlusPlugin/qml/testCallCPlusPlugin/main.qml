@@ -6,6 +6,5 @@ Rectangle {
     height: 360
     Time1 {
         hour: 22
-
     }
 }
