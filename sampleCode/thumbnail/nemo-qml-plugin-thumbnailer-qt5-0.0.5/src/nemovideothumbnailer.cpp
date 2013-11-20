@@ -34,6 +34,7 @@
 #include "nemothumbnailprovider.h"
 
 #include <QLibrary>
+#include <QDebug>
 
 typedef QImage (*CreateThumbnailFunc)(const QString &fileName, const QSize &requestedSize, bool crop);
 
@@ -41,6 +42,7 @@ namespace NemoVideoThumbnailer {
 
 QImage generateThumbnail(const QString &fileName, const QByteArray &cacheKey, const QSize &requestedSize, bool crop)
 {
+    qDebug() << "++++nemovideothumbnailer.cpp::generateThumbnail++++";
     QImage image;
 
     static CreateThumbnailFunc createThumbnail = (CreateThumbnailFunc)QLibrary::resolve(

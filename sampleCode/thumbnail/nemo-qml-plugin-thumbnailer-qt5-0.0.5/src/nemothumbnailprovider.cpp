@@ -57,20 +57,27 @@
 
 static inline QString cachePath()
 {
+    qDebug() << "++++cachePath()++++";
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-    return QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + ".nemothumbs";
+    // return QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + ".nemothumbs";
+    // return QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + "/home/mengcong/Desktop/nemothumbs";
+    return "/home/mengcong/Desktop/nemothumbs";
 #else
-    return QDesktopServices::storageLocation(QDesktopServices::CacheLocation) + ".nemothumbs";
+    // return QDesktopServices::storageLocation(QDesktopServices::CacheLocation) + ".nemothumbs";
+    // return QDesktopServices::storageLocation(QDesktopServices::CacheLocation) + "/home/mengcong/Desktop/nemothumbs";
+    return "/home/mengcong/Desktop/nemothumbs";
 #endif
 }
 
 static inline QString rawCachePath()
 {
+    qDebug() << "++++rawCachePath()++++";
     return cachePath() + QDir::separator() + "raw";
 }
 
 void NemoThumbnailProvider::setupCache()
 {
+    qDebug() << "++++setupCache++++";
     // the syscalls make baby jesus cry; but this protects us against sins like users
     QDir d(cachePath());
     if (!d.exists())
@@ -83,11 +90,13 @@ void NemoThumbnailProvider::setupCache()
 
 static QString cacheFileName(const QByteArray &hashKey, bool makePath = false)
 {
+    qDebug() << "++++cacheFileName++++";
     QString subfolder = QString(hashKey.left(2));
     if (makePath) {
         QDir d(rawCachePath());
         d.mkdir(subfolder);
     }
+
 
     return rawCachePath() +
            QDir::separator() +
@@ -98,6 +107,7 @@ static QString cacheFileName(const QByteArray &hashKey, bool makePath = false)
 
 QByteArray NemoThumbnailProvider::cacheKey(const QString &id, const QSize &requestedSize)
 {
+    qDebug() << "++++cacheKey++++";
     QByteArray baId = id.toLatin1(); // is there a more efficient way than a copy?
 
     // check if we have it in cache
@@ -111,6 +121,7 @@ QByteArray NemoThumbnailProvider::cacheKey(const QString &id, const QSize &reque
 
 static QImage attemptCachedServe(const QString &id, const QByteArray &hashKey)
 {
+    qDebug() << "++++attemptCachedServe++++";
     QFile fi(cacheFileName(hashKey));
     QFileInfo info(fi);
     if (info.exists() && info.lastModified() >= QFileInfo(id).lastModified()) {
@@ -127,6 +138,7 @@ static QImage attemptCachedServe(const QString &id, const QByteArray &hashKey)
 
 void NemoThumbnailProvider::writeCacheFile(const QByteArray &hashKey, const QImage &img)
 {
+    qDebug() << "++++writeCacheFile++++";
     QFile fi(cacheFileName(hashKey, true));
     if (!fi.open(QIODevice::WriteOnly)) {
         qWarning() << "Couldn't cache to " << fi.fileName();
@@ -140,6 +152,7 @@ void NemoThumbnailProvider::writeCacheFile(const QByteArray &hashKey, const QIma
 static QImage rotate(const QImage &src,
                      NemoImageMetadata::Orientation orientation)
 {
+    qDebug() << "++++rotate++++";
     QTransform trans;
     QImage dst, tmp;
 
@@ -193,6 +206,7 @@ static QImage rotate(const QImage &src,
 
 QImage NemoThumbnailProvider::requestImage(const QString &id, QSize *size, const QSize &requestedSize)
 {
+    qDebug() << "++++requestImage++++";
     setupCache();
 
     // needed for stupid things like gallery model, which pass us a url
@@ -224,11 +238,13 @@ QImage NemoThumbnailProvider::requestImage(const QString &id, QSize *size, const
 
 QImage NemoThumbnailProvider::loadThumbnail(const QString &fileName, const QByteArray &cacheKey)
 {
+    qDebug() << "++++loadThumbnail++++";
     return ::attemptCachedServe(fileName, cacheKey);
 }
 
 QImage NemoThumbnailProvider::generateThumbnail(const QString &id, const QByteArray &hashData, const QSize &requestedSize, bool crop)
 {
+    qDebug() << "++++generateThumbnail++++";
     QImage img;
     QSize originalSize;
     QByteArray format;

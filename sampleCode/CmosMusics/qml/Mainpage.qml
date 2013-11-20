@@ -20,7 +20,6 @@ Page {
                 console.log("Error loading component:", component.errorString());
     }
 
-
     Titlebar{
         id:titlebar1
         visible: bListvisible

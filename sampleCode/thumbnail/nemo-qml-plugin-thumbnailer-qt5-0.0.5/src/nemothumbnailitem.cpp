@@ -112,6 +112,7 @@ NemoThumbnailItem::~NemoThumbnailItem()
 
 void NemoThumbnailItem::componentComplete()
 {
+    qDebug() << "++++NemoThumbnailItem::componentComplete++++";
     QDeclarativeItem::componentComplete();
 
     updateThumbnail(true);
@@ -119,11 +120,13 @@ void NemoThumbnailItem::componentComplete()
 
 QUrl NemoThumbnailItem::source() const
 {
+    qDebug() << "++++NemoThumbnailItem::source++++";
     return m_source;
 }
 
 void NemoThumbnailItem::setSource(const QUrl &source)
 {
+    qDebug() << "++++NemoThumbnailItem::setSource()" << source << "++++";
     if (m_source != source) {
         m_source = source;
         emit sourceChanged();
@@ -133,11 +136,13 @@ void NemoThumbnailItem::setSource(const QUrl &source)
 
 QString NemoThumbnailItem::mimeType() const
 {
+    qDebug() << "++++NemoThumbnailItem::mimeType++++";
     return m_mimeType;
 }
 
 void NemoThumbnailItem::setMimeType(const QString &mimeType)
 {
+    qDebug() << "++++NemoThumbnailItem::setMimeType++++";
     if (m_mimeType != mimeType) {
         m_mimeType = mimeType;
         emit mimeTypeChanged();
@@ -147,11 +152,13 @@ void NemoThumbnailItem::setMimeType(const QString &mimeType)
 
 NemoThumbnailItem::Priority NemoThumbnailItem::priority() const
 {
+    qDebug() << "++++NemoThumbnailItem::priority++++";
     return m_priority;
 }
 
 void NemoThumbnailItem::setPriority(Priority priority)
 {
+    qDebug() << "++++NemoThumbnailItem::setPriority++++";
     if (m_priority != priority) {
         m_priority = priority;
         emit priorityChanged();
@@ -162,11 +169,13 @@ void NemoThumbnailItem::setPriority(Priority priority)
 
 QSize NemoThumbnailItem::sourceSize() const
 {
+    qDebug() << "++++NemoThumbnailItem::sourceSize++++";
     return m_sourceSize;
 }
 
 void NemoThumbnailItem::setSourceSize(const QSize &size)
 {
+    qDebug() << "++++NemoThumbnailItem::setSourceSize++++" << size.width() << " " << size.height();
     if (m_sourceSize != size) {
         m_sourceSize = size;
         emit sourceSizeChanged();
@@ -176,11 +185,13 @@ void NemoThumbnailItem::setSourceSize(const QSize &size)
 
 NemoThumbnailItem::FillMode NemoThumbnailItem::fillMode() const
 {
+    qDebug() << "++++NemoThumbnailItem::fillMode++++";
     return m_fillMode;
 }
 
 void NemoThumbnailItem::setFillMode(FillMode mode)
 {
+    qDebug() << "++++NemoThumbnailItem::setFillMode++++";
     if (m_fillMode != mode) {
         m_fillMode = mode;
         emit fillModeChanged();
@@ -190,6 +201,7 @@ void NemoThumbnailItem::setFillMode(FillMode mode)
 
 NemoThumbnailItem::Status NemoThumbnailItem::status() const
 {
+    qDebug() << "++++NemoThumbnailItem::status++++";
     return m_request ? m_request->status : Null;
 }
 
@@ -197,6 +209,7 @@ NemoThumbnailItem::Status NemoThumbnailItem::status() const
 
 QSGNode *NemoThumbnailItem::updatePaintNode(QSGNode *oldNode, UpdatePaintNodeData *)
 {
+    qDebug() << "++++NemoThumbnailItem::updatePaintNode++++";
     ThumbnailNode *node = static_cast<ThumbnailNode *>(oldNode);
     if (!m_request || m_request->pixmap.isNull()) {
         delete node;
@@ -237,6 +250,7 @@ void NemoThumbnailItem::paint(QPainter *painter, const QStyleOptionGraphicsItem 
 
 void NemoThumbnailItem::updateThumbnail(bool identityChanged)
 {
+    qDebug() << "++++NemoThumbnailItem::updateThumbnail++++";
     if (!isComponentComplete())
         return;
 
@@ -278,6 +292,7 @@ NemoThumbnailLoader::~NemoThumbnailLoader()
 
 void NemoThumbnailLoader::updateRequest(NemoThumbnailItem *item, bool identityChanged)
 {
+    qDebug() << "++++NemoThumbnailLoader::updateRequest++++";
     ThumbnailRequest *previousRequest = item->m_request;
     // If any property that forms part of the cacheKey has changed, create a new request or
     // attach to an existing request for the same cacheKey.
@@ -339,6 +354,7 @@ void NemoThumbnailLoader::updateRequest(NemoThumbnailItem *item, bool identityCh
 
 void NemoThumbnailLoader::cancelRequest(NemoThumbnailItem *item)
 {
+    qDebug() << "++++NemoThumbnailLoader::cancelRequest++++";
     ThumbnailRequest *request = item->m_request;
     Q_ASSERT(request);
 
@@ -353,6 +369,7 @@ void NemoThumbnailLoader::cancelRequest(NemoThumbnailItem *item)
 
 void NemoThumbnailLoader::prioritizeRequest(ThumbnailRequest *request)
 {
+    qDebug() << "++++NemoThumbnailLoader::prioritizeRequest++++";
     if (request->loaded)
         return;
 
@@ -381,6 +398,7 @@ void NemoThumbnailLoader::prioritizeRequest(ThumbnailRequest *request)
 
 void NemoThumbnailLoader::shutdown()
 {
+    qDebug() << "++++NemoThumbnailLoader::shutdown++++";
     if (!instance)
         return;
 
@@ -415,6 +433,7 @@ void NemoThumbnailLoader::shutdown()
 
 bool NemoThumbnailLoader::event(QEvent *event)
 {
+    qDebug() << "++++NemoThumbnailLoader::event++++";
     if (event->type() == QEvent::User) {
         // Move items from the completedRequests list to cachedRequests.
         ThumbnailRequestList completedRequests;
@@ -467,6 +486,7 @@ bool NemoThumbnailLoader::event(QEvent *event)
 
 void NemoThumbnailLoader::run()
 {
+    qDebug() << "++++NemoThumbnailLoader::run++++";
     NemoThumbnailProvider::setupCache();
 
     QMutexLocker locker(&m_mutex);
