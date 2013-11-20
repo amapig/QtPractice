@@ -1,0 +1,7 @@
+syntax: regexp
+dist/
+build/
+\.suo$
+\.kdev4$
+\.user$
+~$
