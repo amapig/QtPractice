@@ -1,32 +1,26 @@
 import QtQuick 2.0
 
-Item {
-    width: 500; height: 500
+Rectangle {
+    width: 360
+    height: 360
+    property bool isLeftVisible : false
+    property bool isRightVisible : false
+    Loader { id: testLoader }
 
-    Component {  // Just can contain one child
-        id: redSquare
-
-        Item {
-            Rectangle {
-                color: "red"
-                width: 100
-                height: 100
-
-                Text {
-                    color: "white"
-                    text: "hello"
-                }
-            }
-
-            Rectangle {
-                color: "blue"
-                width: 50
-                height: 50
-            }
-        }
-
+    Component.onCompleted: {
+        console.log("Component on completed.");
+        testLoader.source = "Left.qml"
+        isLeftVisible = true;
     }
 
-    Loader { sourceComponent: redSquare }
-    Loader { sourceComponent: redSquare; x: 200}
+    MouseArea {
+        anchors.fill: parent
+        onClicked: {
+            console.log("press clicked");
+            testLoader.source = "Right.qml"
+            isLeftVisible = false;
+            isRightVisible = true;
+        }
+    }
+
 }

@@ -20,7 +20,6 @@ Component {
             source: icon
             width: photoGridDelegateItem.width
             height: photoGridDelegateItem.height
-
         }
 
         Image {

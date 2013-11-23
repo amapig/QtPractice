@@ -18,5 +18,4 @@ VideoOutput {
     function stop() { mediaPlayer.stop() }
     function getPosition() { mediaPlayer.position() }
     function getDuration() { mediaPlayer.duration() }
-
 }

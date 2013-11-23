@@ -21,12 +21,11 @@ import QtQuick 2.0
 import QtMultimedia 5.0
 
 Rectangle {
+    id: bar
+
+    color: "black"
     property bool portrait: true
     property string srcUri: ""
-
-
-    id: bar
-    color: "black"
 
     BorderImage {
         anchors.fill: parent

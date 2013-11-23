@@ -174,7 +174,7 @@ Rectangle {
         }
     }
 
-    ListView{
+    GridView {
         model: playQueue
         delegate: fileDelegate
         currentIndex: playQueue.currentIndex
