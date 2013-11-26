@@ -468,8 +468,8 @@ bool NemoThumbnailLoader::event(QEvent *event)
                 request->status = NemoThumbnailItem::Error;
             }
             for (ThumbnailItemList::iterator item = request->items.begin();
-                    item != request->items.end();
-                    ++item) {
+                 item != request->items.end();
+                 ++item) {
                 item->m_imageChanged = true;
                 item->setImplicitWidth(implicitSize.width());
                 item->setImplicitHeight(implicitSize.height());
@@ -499,18 +499,24 @@ void NemoThumbnailLoader::run()
         // prioritized over generating any thumbnail, and low priority loading or generation
         // is deprioritized over everything else.
         if (m_quit) {
+            qDebug() << "++++0++++";
             return;
         } else if ((request = m_thumbnailHighPriority.takeFirst())
-                || (request = m_thumbnailNormalPriority.takeFirst())) {
+                   || (request = m_thumbnailNormalPriority.takeFirst())) {
+            qDebug() << "++++1++++";
             tryCache = true;
         } else if ((request = m_generateHighPriority.takeFirst())
-                || (request = m_generateNormalPriority.takeFirst())) {
+                   || (request = m_generateNormalPriority.takeFirst())) {
+            qDebug() << "++++2++++";
             tryCache = false;
         } else if ((request = m_thumbnailLowPriority.takeFirst())) {
+            qDebug() << "++++3++++";
             tryCache = true;
         } else if ((request = m_generateLowPriority.takeFirst())) {
+            qDebug() << "++++4++++";
             tryCache = false;
         } else {
+            qDebug() << "++++5++++";
             m_waitCondition.wait(&m_mutex);
             continue;
         }
@@ -526,7 +532,11 @@ void NemoThumbnailLoader::run()
 
         locker.unlock();
 
+        // mc: Debug
+        tryCache = false;
+
         if (tryCache) {
+            qDebug() << "++++tryCache = true++++";
             QImage image = NemoThumbnailProvider::loadThumbnail(fileName, cacheKey);
 
             locker.relock();
@@ -545,6 +555,7 @@ void NemoThumbnailLoader::run()
                 lists[request->priority]->append(request);
             }
         } else {
+            qDebug() << "++++tryCache = false++++";
             QImage image = !mimeType.startsWith(QLatin1String("video/"), Qt::CaseInsensitive)
                     ? NemoThumbnailProvider::generateThumbnail(fileName, cacheKey, requestedSize, crop)
                     : NemoVideoThumbnailer::generateThumbnail(fileName, cacheKey, requestedSize, crop);
