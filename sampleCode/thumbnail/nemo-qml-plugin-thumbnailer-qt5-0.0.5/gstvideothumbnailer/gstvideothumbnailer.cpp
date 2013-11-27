@@ -142,6 +142,7 @@ static GstFlowReturn new_preroll(GstAppSink *appsink, gpointer data)
 
 extern "C" Q_DECL_EXPORT QImage createThumbnail(const QString &fileName, const QSize &requestedSize, bool crop)
 {
+    qDebug() << "++++gstVideothumbnailer.cpp::createThumnbail++++";
     static bool initialized = false;
     if (!initialized) {
         gst_init(0, 0);
