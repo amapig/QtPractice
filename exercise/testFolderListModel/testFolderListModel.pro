@@ -1,5 +1,5 @@
 # Add more folders to ship with the application, here
-folder_01.source = qml/testCallNemoThumbnailer
+folder_01.source = qml/testFolderListModel
 folder_01.target = qml
 DEPLOYMENTFOLDERS = folder_01
 
@@ -11,12 +11,8 @@ QML_IMPORT_PATH =
 # CONFIG += mobility
 # MOBILITY +=
 
-QT += core gui qml quick sql dbus multimedia
-
 # The .cpp file which was generated for your project. Feel free to hack it.
-SOURCES += main.cpp \
-    datadirectory.cpp \
-    playlistmodel.cpp
+SOURCES += main.cpp
 
 # Installation path
 # target.path =
@@ -24,7 +20,3 @@ SOURCES += main.cpp \
 # Please do not modify the following two lines. Required for deployment.
 include(qtquick2applicationviewer/qtquick2applicationviewer.pri)
 qtcAddDeployment()
-
-HEADERS += \
-    datadirectory.h \
-    playlistmodel.h

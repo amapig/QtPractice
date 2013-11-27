@@ -2,8 +2,8 @@ import QtQuick 2.0
 import Thumbnailer 1.0
 
 Rectangle {
-    width: 800
-    height: 800
+    width: 360
+    height: 360
 
     Image {
         id: originImage
@@ -15,6 +15,9 @@ Rectangle {
 
     Thumbnail {
         id: thumbnail
+        width: parent.width
+        height: parent.height
+        anchors.top: parent.top
         anchors.bottom: parent.bottom
         x: 10
         sourceSize.width: 200
@@ -53,30 +56,32 @@ Rectangle {
     property int imageIndex: 0
     property int cacheImageIndex: imageIndex
 
-    Timer {
-        id: timer
-        interval: 200; // a long time
-        running:true
-        repeat: true
-        onTriggered: {
-            getThumbnails();
-        }
-    }
+//    Timer {
+//        id: timer
+//        interval: 200; // a long time
+//        running:true
+//        repeat: true
+//        onTriggered: {
+//            getThumbnails();
+//        }
+//    }
 
     function getThumbnails() {
         if (imageIndex == 0 || imageIndex != cacheImageIndex) { // I have 24 pictures.
-            console.log("++++"+ imageIndex + ":" + playQueue.getPath(imageIndex) + "++++");
-            thumbnail.source = playQueue.getPath(imageIndex);
+            // console.log("++++"+ imageIndex + ":" + playQueue.getPath(imageIndex) + "++++");
+            // thumbnail.source = playQueue.getPath(imageIndex);
+            thumbnail.source = "file:///home/mengcong/Videos/1.3gp"
+            // thumbnail.source = "file:///home/mengcong/Pictures/1.jpg"
             cacheImageIndex = imageIndex;
         }
     }
 
-    //    MouseArea {
-    //        id: mouseArea
-    //        anchors.fill: parent
-    //        onClicked: {
-    //            getThumbnails()
-    //        }
-    //    }
+        MouseArea {
+            id: mouseArea
+            anchors.fill: parent
+            onClicked: {
+                getThumbnails()
+            }
+        }
 
 }

@@ -45,8 +45,12 @@ QImage generateThumbnail(const QString &fileName, const QByteArray &cacheKey, co
     qDebug() << "++++nemovideothumbnailer.cpp::generateThumbnail++++";
     QImage image;
 
+//    static CreateThumbnailFunc createThumbnail = (CreateThumbnailFunc)QLibrary::resolve(
+//                QLatin1String(NEMO_THUMBNAILER_DIR "/libvideothumbnailer.so"), "createThumbnail");
+
     static CreateThumbnailFunc createThumbnail = (CreateThumbnailFunc)QLibrary::resolve(
-                QLatin1String(NEMO_THUMBNAILER_DIR "/libvideothumbnailer.so"), "createThumbnail");
+                QLatin1String("/home/mengcong/ProgramFiles/Qt5.1.1/5.1.1/gcc_64/qml/Thumbnailer/libvideothumbnailer.so"),
+                "createThumbnail");
 
     if (createThumbnail) {
         image = createThumbnail(fileName, requestedSize, crop);

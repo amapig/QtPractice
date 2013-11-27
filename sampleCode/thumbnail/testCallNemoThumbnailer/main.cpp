@@ -19,18 +19,19 @@ int main(int argc, char *argv[])
 
     QtQuick2ApplicationViewer viewer;
 
-    PlaylistModel *playQueue = new PlaylistModel;
-    QMediaPlaylist *playlist = new QMediaPlaylist;
+//    PlaylistModel *playQueue = new PlaylistModel;
+//    QMediaPlaylist *playlist = new QMediaPlaylist;
 
-    playQueue->setPlaylist(playlist);
+//    playQueue->setPlaylist(playlist);
 
-    DataDirectory::initialize();
+//    DataDirectory::initialize();
 
-    FillMediaList("/home/mengcong/Pictures", playQueue);
-    playQueue->setCurrentIndex(0);
+    // FillMediaList("/home/mengcong/Pictures", playQueue);
+//    FillMediaList("/home/mengcong/Videos", playQueue);
+//    playQueue->setCurrentIndex(0);
 
-    viewer.rootContext()->setContextProperty("playQueue", playQueue);
-    viewer.setMainQmlFile(QStringLiteral("qml/testCallNemoThumbnailer/main.qml"));
+    // viewer.rootContext()->setContextProperty("playQueue", playQueue);
+    viewer.setMainQmlFile(QStringLiteral("qml/testCallNemoThumbnailer/TestVideoThumbnail.qml"));
     viewer.showExpanded();
 
     return app.exec();

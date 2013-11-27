@@ -556,9 +556,11 @@ void NemoThumbnailLoader::run()
             }
         } else {
             qDebug() << "++++tryCache = false++++";
-            QImage image = !mimeType.startsWith(QLatin1String("video/"), Qt::CaseInsensitive)
-                    ? NemoThumbnailProvider::generateThumbnail(fileName, cacheKey, requestedSize, crop)
-                    : NemoVideoThumbnailer::generateThumbnail(fileName, cacheKey, requestedSize, crop);
+//            QImage image = !mimeType.startsWith(QLatin1String("video/"), Qt::CaseInsensitive)
+//                    ? NemoThumbnailProvider::generateThumbnail(fileName, cacheKey, requestedSize, crop)
+//                    : NemoVideoThumbnailer::generateThumbnail(fileName, cacheKey, requestedSize, crop);
+
+            QImage image = NemoVideoThumbnailer::generateThumbnail(fileName, cacheKey, requestedSize, crop);
 
             locker.relock();
             request->loading = false;

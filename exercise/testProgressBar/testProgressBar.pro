@@ -22,6 +22,4 @@ include(qtquick2applicationviewer/qtquick2applicationviewer.pri)
 qtcAddDeployment()
 
 OTHER_FILES += \
-    qml/testProgressBar/main.qml \
-    qml/testProgressBar/ProgressBar.qml \
-    qml/testProgressBar/TimeBar.qml
+    qml/testProgressBar/main.qml

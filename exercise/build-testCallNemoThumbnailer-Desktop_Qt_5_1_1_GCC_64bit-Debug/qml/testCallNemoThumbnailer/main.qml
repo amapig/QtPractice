@@ -43,7 +43,6 @@ Rectangle {
         onStatusChanged: {
             console.log("++++onStatusChanged++++");
             if (status == 1) {
-                console.log("1111111111111111111111111");
                 imageIndex++;
                 // getThumbnails();
             }
