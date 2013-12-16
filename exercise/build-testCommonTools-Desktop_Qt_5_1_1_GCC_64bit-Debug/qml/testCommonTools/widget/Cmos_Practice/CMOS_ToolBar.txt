@@ -1,0 +1,73 @@
+公用控件之CMOS_ToolBar.qml
+说明：此控件主要用于底端的操作按钮而设计实现的。其实现依据CMOS_BasicTitleBar。通过使能左右两侧（leftComponent、rightComponent）区域，并且重载middleComponent因为主要现实按钮，上面图，下面使用文本标注。根据常规需求特此规定使用listmodel作为model属性，里面必须包含imgUrl及title属性，默认的delegate使用cmosbutton，会访问此model的属性。其次spacing对相应的间距进行调整。使用者根据需求可以更改背景属性。
+
+signal
+	signal trigger(int index) //表示第index按钮选项被点击，用户可以监听并做出相关的操作
+	property ListModel repeatModel:myRepeatModel  作为toolbar 每个选项的model，使用listModel，其要求listElement包含imgUrl和title，如下默认示例：
+ListModel{
+        id:myRepeatModel
+
+        ListElement{
+            imgUrl:"images/deleteico.png"
+            title:"返回"
+        }
+        ListElement{
+            imgUrl:"images/search.png"
+            title:"更多"
+        }
+        ListElement{
+            imgUrl:"images/deleteico.png"
+            title:"置顶"
+        }
+
+    }
+
+	需要特别说明的是，使用model显示，各个元素之间的间距使用属性spacing进行设置。
+
+	property Component itemDelegate:buttonDelegate作为此控件的delegate，用于显示model的内容。根据规格，使用默认值。与上述model进行搭配使用，如默认为：
+Component{
+           id:buttonDelegate
+           CMOS_Button{
+               borderWidth: 0
+               fontColor: "#000000"
+               fontSize: 26
+               text:model.title
+               iconSource: model.imgUrl
+
+               lMargin:1
+               rMargin:1
+               tMargin:1
+               bMargin:1
+
+               spacing:6
+
+               onClicked: toolBar.trigger(index)
+           }
+    }
+
+
+
+
+以上用户可以根据自身需求进行操作使用，更多详细属性可以参考CMOS_BasicTitleBar.txt进行查阅各属性的使用说明及情况
+如果更换背景方式等都可以使用CMOS_BasicTitleBar.txt相关属性进行设置，如果想要设计更多，可以重载背景或者使用对应的item进行设置。
+
+
+example：
+CMOS_ToolBar{
+        spacing:180
+        isBgUseImage: true
+        bgImgSource: "images/bnbgactive.png"
+
+        repeatModel: ListModel{
+            ListElement{
+                imgUrl:"images/deleteico.png"
+                title:"删除"
+            }
+
+            ListElement{
+                imgUrl:"images/deleteico.png"
+                title:"置顶"
+            }
+        }
+        onTrigger: console.log("CMOS_ToolBar is trigger:",index)
+    }

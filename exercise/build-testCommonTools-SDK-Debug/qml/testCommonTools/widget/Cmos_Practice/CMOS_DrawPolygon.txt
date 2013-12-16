@@ -1,0 +1,21 @@
+公用控件之多边形--CMOS_CMOS_DrawPolygon.qml
+说明：此控件的设计目标是为了在某些特殊的场合需要提供多边形图形，并且带有进度可变更状态的内容。如短信聊天信息的显示的突角等，同时需要对发送状态进行检测的情况下变更不同的状态。主要设计为多边形是否填充模式，如果是填充模式则需要设定背景色等，各属性见下面实现。同时此通过canvas实现的，所以对于画图，用户可以更句context等属性进行定制等。
+property int bgFillMode:1 //0: bgColor 1:gradientArray 设定背景填充模式，0为单色，1为gradient渐变模型
+property bool isFillMode:true 是否填充多边形
+    property string bgColor: "red" 用于单色填充时的填充颜色
+    property variant polygonPoints:[Qt.point(0,0),Qt.point(width/2,y),Qt.point(width,height),Qt.point(width/2,height/2),Qt.point(0,height)] 此时定义多边形的各个拐点坐标，一句线路顺序，是一个而为数组，数据模型为：[Qt.point(),...],即以Qt.point()作为元素，表示其坐标的x，y值
+    property variant gradientArray:[[0.2,"red"],[0.5,"green"],[1,"blue"]] 此为填充模式下颜色渐变值，其也为数组模式，原型为：[[int,colorString],[int,colorString],...]，其中int是0-1的渐变点位置，colorString表示颜色
+    property int gradientMode:0 //0:line Graident 1:Radial Graident 2:Conica Graident  此表示颜色渐变的模型，0表示先行模式，1表示圆形模式，2表示锥形模式。
+property int lineWidth:2 此表示不填充时画笔的线宽，默认为2
+
+说明：此使用的是Canvas实现，所以使用者可以根据自己需求，通过其相应的借口进行设置和完善，其绘图函数在context属性，其是Context2D对象
+
+example
+CMOS_DrawPolygon{
+	width:720
+	height:100
+	bgFillMode: 0
+	isFillMode: false
+}
+
+

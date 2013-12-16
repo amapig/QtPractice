@@ -1,0 +1,18 @@
+公用控件之CMOS_TopTitleBar.qml
+说明：CMOS_TopTitleBar是根据CMOS_BasicTitleBar控件定制而成的简单使用。也可以看做是CMOS_BasicTitleBar控件的一个例子。其特点要求左侧提供一个返回按钮，右侧暂时不需要，所以默认将右侧及中间区域不要，然后根据需求设定了图片点击操作。状态根据leftEnabled及leftPressed进行图片的切换。当点击时会出发lTrigger信号。为了便于理解，toptitlebar主要提供返回功能，所以撰写一个signal信号goback信号。用户可以根据是否可以返回上一级（如果没有上一级的时候可以使能掉）而选择是否使能。
+特点：其默认实现在父控件的顶端并防止在父类窗口的嘴上面。
+默认背景颜色使用rectangle来实现的，如果更改为图片，可根据相应的变量进行设置，详细见CMOS_BasicTitleBar.txt内容及说明
+
+使用时可以根据实际应用添加属性等操作。
+
+信号：
+signal goback() 点击时触发
+
+example：
+    CMOS_TopTitleBar
+    {
+        onGoback: console.log("top title bar clicked")
+    }
+
+
+特别注意，因为在使用component属性，在整个控件加载完成之前其对应的item是空的，如果加载完成之后就可以访问对应的item属性进行响应的功能设置。这样就可以访问大量的内置属性，在此以替代暴露所有属性。因为使用了CMOS_BasicTitleBar，所以对于不同的区域提供了可供访问的item属性，一般是leftButton，rightButton及middleArea以及background。在控件加载完之后就可以访问并通过这写对象属性访问一些封装属性，以达到全面属性覆盖。

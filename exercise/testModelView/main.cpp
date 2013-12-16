@@ -1,11 +1,13 @@
-#include "mainwindow.h"
-#include <QApplication>
+#include <QtGui/QGuiApplication>
+#include "qtquick2applicationviewer.h"
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+    QGuiApplication app(argc, argv);
 
-    return a.exec();
+    QtQuick2ApplicationViewer viewer;
+    viewer.setMainQmlFile(QStringLiteral("qml/testModelView/main.qml"));
+    viewer.showExpanded();
+
+    return app.exec();
 }

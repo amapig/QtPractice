@@ -1,0 +1,20 @@
+公用控件之CMOS_Switch.qml
+说明：开关选项在很多的时候都会被使用，特此根据系统的相关风格需求和特点，完成此控件，便于用户可以根据自己的需求进行使用。其开关状态及对应的按钮都是可以点击的，点击后切换开关状态
+property bool powerState:false 表示开关是否是开的，可以监听此获取当前的开关状态和信息，同时可以使用switchChanged信号
+property string onImg:"images/switchon.png" 状态为开时图片，isUseImg为true时使用
+property string offImg:"images/switchoff.png"状态为关时图片，isUseImg为true时使用
+property string onText:"On"状态为开时文字，isUseImg为false时使用
+property string offText:"Off"状态为关时文字，isUseImg为false时使用
+property string btnImg:"images/switchbn.png" 表示开关状态的图片
+property bool isUseImg:true 表示开关状态是否使用图片，默认为true，否则为false
+
+signal switchChanged(bool isOn) 当开关状态发生变化的时候触发此事件，用户可以监听此事件完成相应的内容。
+
+example：
+CMOS_Switch{
+y:30
+width:300
+height:100
+isUseImg:true
+}
+

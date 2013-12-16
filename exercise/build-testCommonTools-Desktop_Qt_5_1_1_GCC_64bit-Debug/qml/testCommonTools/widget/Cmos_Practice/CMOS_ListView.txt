@@ -1,0 +1,107 @@
+公用控件之CMOS_ListView.qml
+说明：CMOS_ListView是根据系统特性要求完善的，其主要添加编辑模式，其和CMOS_Delegate配合使用。其使用ListView作为基础控件，所以关于相关接口属性元素可以查看ListView。
+
+property bool canEdit:true 表示此listview是否可以编辑模式
+property bool isEditMode:false 表示此是否进入编辑模式，List_Delegate会绑定此属性状态然后判断delegate的每一个item是否进入编辑模式
+property bool isSelectAll:false 表示编辑时是否所有items被选中，用于delegate进行检测，判断是否全选和全不选
+
+signal deleteItems(variant indexList)  由listview的操作控件删除进进行调用，用户需要监听此信号，用于删除相关model的数据。返回的是model的index的数组
+signal goTop() 置顶操作符号，也是由listview的toolbar部分进行处理
+signal curDragItemChanged(int curIndex) 用delegate进行检测，如果某个delegate的item处于拖动模式，则调用此信号并传递自己的序号。用户需要监听此信号完成对应的处理
+signal resetDelegateState() delegate会检测这个信号完成自身状态的重置。此在listview进行回复原始状态时候进行处理的，如进入编辑模式时需要退出drag状态，并且返回相应的内容。
+
+function changeEditMode()用于listview的编辑模式isEditMode。此为取反
+function checkItem(index,checked) delegate进行调用，当其被checkd的时候调用以进行标记。
+function deleteTaggedItems() 用于用户进行删除编辑模式下已经编辑的delegate的选项。
+
+function toTop()信号用于将listview置顶
+function getNewStatus(index)由delegate进行调用，用户确定自己是否曾经被标记的状态。
+
+property Component headerEditBarCmp:默认为编辑模式下的headerBar，默认有取消全选几取消全选的操作，进行编辑模式的切换，在编辑模式下现实
+
+property Component bottomEditToolBarCmp:编辑模式下的底端的工具条。默认有置顶和删除请求操作。
+property ListModel toolBarModel:是底层编辑模式下默认的编辑条内容，其内容为urlImage和title，会出发toolBarTrigger信号。默认有两个操作选项即置顶和删除
+signal toolBarTrigger(int index) toolbar的item触发信号用户根据index进行处理
+property int toolBarSpacing:118 用户使用CMOS_ToolBar时添加的各个元素之间的间距spacing，默认为118
+
+
+example:
+Rectangle {
+        anchors.fill: parent
+        CMOS_ListView{
+
+
+            ListModel{
+                id:myModel
+                ListElement{
+                    name:"choice 1"
+                }
+                ListElement{
+                    name:"choice 2"
+                }
+                ListElement{
+                    name:"choice 3"
+                }
+                ListElement{
+                    name:"choice 4"
+                }
+                ListElement{
+                    name:"choice 5"
+                }
+                ListElement{
+                    name:"choice 6"
+                }
+                ListElement{
+                    name:"choice 7"
+                }
+                ListElement{
+                    name:"choice 8"
+                }
+                ListElement{
+                    name:"choice 9"
+                }
+                ListElement{
+                    name:"choice 10"
+                }
+            }
+            ///for test
+            Rectangle{
+                id:leftValueBar
+                width:100
+                height:100
+                color:"red"
+                visible: false
+                CMOS_Button{
+                    text:"left"
+                    onClicked: console.log("hahhahhahahahhahhokle")
+                }
+
+            }
+            Rectangle{
+                id:rightValueBar
+                width:100
+                height:100
+                color:"yellow"
+                visible: false
+                CMOS_Button{
+                    text:"right"
+                    onClicked: console.log("hahhahhahahahhahhokle")
+                }
+
+            }
+            ///for test
+
+            property Component listDelegate:CMOS_Delegate{
+                id:cmosDelegate
+                canDrag:true
+                canTag: false
+                isEditMode: false
+                leftBar: leftValueBar
+                rightBar:rightValueBar
+            }
+
+                model:myModel
+                delegate:listDelegate
+
+        }
+    }

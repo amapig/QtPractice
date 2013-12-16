@@ -1,0 +1,40 @@
+公用控件之CMOS_ChoiceDialog.qml
+说明：此控件主要的目的是以对话框的形式展示给使用者进行选择性对话。其是依据CMOS_BasicDialog.qml进行定制contentlabeCMP实现的。
+
+signal triggered(int index) 用户点击选择项目时触发信号，提示用户哪一项被选中
+
+property string title: "choice more"//提示用户选择内容的提示
+property int titleFontSize: 36 //标题字体大小
+property color titleFontColor: "#000000"//标题字体颜色
+property int columnSpacing:36此表示各个控件垂直时的间距
+property int listviewSpacing: 36此表示选择选项之间间隔
+property int maxHeight:50//parent.height-120 定义选项最多所到的高度
+property int choiceItemFontSize:30选择项目文字现实是字体大小
+property color choiceItemFontColor:"green"选择项目文字现实是字体颜色
+
+
+property ListModel listModel:myModel 选择框的listview的model属性，默认为listmodel，只有一个name选项
+property Component listDelegate:myDelegate delegate的属性，默认为Rectangle，只有一个项用于输出listmodel的内容，与默认的listmodel对应
+property ListView listview:null是choiceDialog的listview接口，当控件加载完成之后会创建。此时可以通过此接口实现对控件的属性的访问和性质的处理。其所有的属性和操作可以参见标准ListView控件
+
+
+
+
+example：
+    CMOS_ChoiceDialog{
+        title:"添加更多选项"
+        Component.onCompleted: {
+            listview.currentIndex = 4
+
+        }
+        onTriggered:
+        {
+            console.log("choiceDialog trigger index:",index)
+            if(index > 3)
+                listview.currentIndex = 0
+            else
+                listview.currentIndex = 4
+        }
+    }
+
+

@@ -1,0 +1,33 @@
+公用控件之CMOS_LineEdit.qml
+说明：编辑框，其使用在很多的地方，常见的有搜索性质的编辑框，普通编辑框及可以进行删除的编辑模式。所以仍然采用CMOS_BasicTitleBar.qml控件。
+左侧默认的带有搜索性质的框，中间是可以输入内容的，右侧是如果有内容则会显示是否删除的内容。如果不需要左侧搜索框，则可以通过leftEnabled使能，同样对于右侧编辑也是如此。所以在使用的时候根据不同的特点进行各个控件的使能。
+
+signal
+   textChanged() 当编辑框内容发生变化的时候则触发此信号
+function
+    getText()获取当前的文本内容
+
+    property int editFontSize:30 设置textEdit的字体大小
+    property color editTextColor:"green" 设置字体颜色
+    property int editEchoMode:TextInput.Normal设置输出模式，见TextInput
+    property string editPlaceHoldeText:""编辑内容的展位内容，用于没有内容输入的时候显示。
+    property Component textFieldStyle:textFieldStyleCmp：用于设置TextField的style，即TextFieldStyle。
+
+
+备注：使用enabledLeft等使能响应的功能区（left middle及right）
+通过上述信号曹获取响应的编辑框内容
+通过上述属性可以对编辑框响应的内容进行设置
+特别注意，因为在使用component属性，在整个控件加载完成之前其对应的item是空的，如果加载完成之后就可以访问对应的item属性进行响应的功能设置。这样就可以访问大量的内置属性，在此以替代暴露所有属性。因为使用了CMOS_BasicTitleBar，所以对于不同的区域提供了可供访问的item属性，一般是leftButton，rightButton及middleArea以及background。在控件加载完之后就可以访问并通过这写对象属性访问一些封装属性，以达到全面属性覆盖。
+
+
+example：
+    CMOS_LineEdit{
+        id:lineEdit
+        anchors.top:topTitleBar.bottom
+        anchors.margins: 30
+
+        onTextChanged: {
+            console.log("CMOS_LineEdit onTextChanged:",lineEdit.getText())
+        }
+    }
+

@@ -6,8 +6,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QtQuick2ApplicationViewer viewer;
-    viewer.setMainQmlFile(QStringLiteral("qml/testFolderListModel/main.qml"));
-    // viewer.setMainQmlFile(QStringLiteral("qml/testFolderListModel/main_1.qml"));
+    viewer.setMainQmlFile(QStringLiteral("qml/testFolderListModel/main_1.qml"));
     viewer.showExpanded();
 
     return app.exec();

@@ -7,7 +7,7 @@ ListView {
     FolderListModel {
         id: folderModel
 
-        folder: "/home/mengcong/Videos"
+        folder: "/home/skytree/Videos"
         nameFilters: ["*.3gp", "*.jpg"]
     }
 

@@ -1,0 +1,23 @@
+公用控件之CMOS_EditTitleBar.qml
+说明：编辑条主要适用于对于listview等进行编辑时候使用，比如修改响应的记录，或者信息等。其依然以CMOS_BasicTitleBar.qml控件作为基础控件进行更改。
+其使用了CMOS_BasicTitleBar三个默认的元素作为展示风格，所以完全可以访问CMOS_BasicTitleBar所有的所有元素，并更改其相应的值。本控制是对CMOS_BasicTitleBar控件的定制，目的为了达到更快的开发效果和统一的风格。
+
+
+特别注意，因为在使用component属性，在整个控件加载完成之前其对应的item是空的，如果加载完成之后就可以访问对应的item属性进行响应的功能设置。这样就可以访问大量的内置属性，在此以替代暴露所有属性。因为使用了CMOS_BasicTitleBar，所以对于不同的区域提供了可供访问的item属性，一般是leftButton，rightButton及middleArea以及background。在控件加载完之后就可以访问并通过这写对象属性访问一些封装属性，以达到全面属性覆盖。
+
+example：
+CMOS_EditTitleBar{
+	id:editBar
+	anchors.top: lineEdit.bottom
+	anchors.topMargin: 5
+
+	onLTrigger:
+	{
+	title= title+"l"
+	}
+
+	onRTrigger:
+	{
+	title= title+"r"
+	}
+    }

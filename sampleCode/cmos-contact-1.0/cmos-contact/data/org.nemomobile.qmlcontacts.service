@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.nemomobile.qmlcontacts
+Exec=/usr/bin/invoker --no-wait -d 10 --type=qtcomponents-qt5 /usr/bin/qmlcontacts -fromDBus
