@@ -1,0 +1,32 @@
+公用控件之-CMOS_CircleSlider.qml
+圆形滑动输入框也是在特定情况下为gui提供了常用的形式。为此，实现之，望能使用参考。此使用Canvas作为基础控件，使用者在相关细节可以参考Canvas及2d绘图句柄Context2D参数。具体使用说明如下：
+property int lineWidth:2 表示圆的内外线宽
+property int circleWidth:20 表示圆的宽度 ，计算原则是根据画板大小的最大直径为外圆的直径，减去此值，可以得到内圆的  半径
+
+property real sliderValue: 0 表示当前位置所代表的弧度值
+
+property variant fillStyle:"blue" 填充圆内部的颜色
+property variant strokeStyle:"green" 圆边框的颜色
+property variant backStyle:"black" 背景颜色值
+
+property real maxValue:100 slider的最大值
+property real minValue:0 slider的最小值
+property int value:10 slider表示的当前值
+property real stepSize: 1 跨度值
+
+property bool canSlider:false 表示当前是否可以滑动
+property real centerX:Math.min(width,height)/2  可画区域位置的中心点x值
+property real centerY:Math.min(width,height)/2 可画区域位置的中心点y值
+property real outRadius:Math.min(width,height)/2- lineWidth*2 外圆半径
+property real inRadius:outRadius-circleWidth 内圆半径
+property real sliderRadius:(outRadius+inRadius)/2 滑动区的半径
+property bool antiClockwise:true 是否顺时针旋转方向
+
+
+example:    
+CMOS_CircleSlider{
+        width:200
+        height:200
+        circleWidth: 50
+    }
+

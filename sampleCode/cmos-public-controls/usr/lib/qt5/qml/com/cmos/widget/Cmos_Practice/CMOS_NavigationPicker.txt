@@ -1,0 +1,55 @@
+公用控件之CMOS_NavigationPicker.txt
+说明：此公用控件可以作为导航，例如目录浏览在多级目录时显示不下，或者可以作为tab页进行使用，其使用Listview作为基类并且方向选择横向的。当然如果有竖向必要的话，可以利用listview的orientation进行设置。highlight默认使用绿色的背景。如果不需要背景可以将其设置为空，或者更改为其他格式，cmos系统使用默认。使用说明如下：
+
+property var values:[0,1,2,3] 需要的值，类型需要是统一的
+    property int fontSize:30 显示的字体大小
+    property color fontColor:"black"   现实字体的颜色
+    property int borderWidth: 1 背景边界的线宽
+    property color borderColor:"green" 背景边界的线的颜色
+    property color backgroundColor:"grey" 背景颜色
+    property int radius:4 背景的radius值
+    property Item backgroundItem: 背景Item，可以在创建后访问并设置相关属性
+    property Component background:背景组件，默认是rectangle，用户可以根据自己的需求进行访问
+
+signal itemClicked(int itemIndex) 当某个选项被点击的时候会出发这个事件，其中itemIndex代表当前选项的item，其从0-listview.count-1的值，用户可以根据此值进行相关的处理，比如目录浏览的话，可以添加下级目录，或者返回到当前目录，或者表示tabview的选项进行处理。
+
+function pushValue(value) 向末尾添加数据，此值会存储到values中并且会更改model的只。
+function popValue(value) 从末尾弹出值，直到value值，比如目录浏览，在点击前面的值时会把后面的目录清空，则可以调用此值完成
+
+function clearAll() 清空所有listview的值和数据
+
+function getCurValue()获取当前item的具体值
+function getIndexValue(index)获取索引值为index的项目的值。长用于当某个项被点了之后获取此项index对应的值。
+
+
+example：
+    Image {
+        id: backimg
+        source: "images/xiangyou.png"
+        anchors.left: parent.left
+        anchors.bottom: picker.top
+        MouseArea{
+            anchors.fill: parent
+            onClicked: picker.pushValue("item"+picker.count)
+        }
+    }
+    Image {
+        id: addimg
+        source: "images/xiangyou.png"
+        anchors.right: picker.right
+        anchors.bottom: picker.top
+
+        MouseArea{
+            anchors.fill: parent
+            onClicked: picker.popValue(picker.values[picker.currentIndex])
+        }
+    }
+
+    CMOS_NavigationPicker{
+        id:picker
+        y:400
+        width:350
+        height:160
+        onItemClicked: popValue(values[itemIndex])
+    }
+

@@ -1,0 +1,44 @@
+公用控件之CMOS_InputDialog.qml
+说明：此控件主要的目的是以对话框的形式展示给使用者进行相应的输入。其是依据CMOS_BasicDialog.qml进行定制contentlabe实现的。
+
+signal accepted(string value); //信号表示用户点击确定，返回输入的内容
+signal rejected(); //用户点击取消或者非操作区域点击导致取消对话框
+signal finished();//表示用户点击按钮，此次对话完成，取消或者确定都会触发
+
+property string title: "enter you want"//提示用户输入标题的对话框
+property int titleFontSize: 36 //标题字体大小
+property color titleFontColor: "#000000"//标题字体颜色
+property string placeholderText :"" //提示用户输入提示信息，在没有输入任何内容时提示现实
+
+property int editFontSize: 30 编辑框文字大小
+property color editFontColor: "green"编辑框文字颜色
+
+property Component textFieldStyleCmpproperty Component textFieldStyleCmp
+//这个是为了为编辑框添加的style，使用TextFiledSylte完成style的设置
+
+property int columnSpaceing:36此表示各个控件垂直时的间距
+property int rowSpacing: 36此表示各个控件水平时的间距
+
+property CMOS_Button cancleButton: null 取消按钮的操作接口，在加载完成之后会创建并有效，根据此可以定制按钮的内容。相见CMOS_Button.txt内容
+property CMOS_Button okButton: null 确定按钮的操作接口，在加载完成之后会创建并有效，根据此可以定制按钮的内容。相见CMOS_Button.txt内容
+
+property TextField txtField: null 编辑框的操作接口，在加载完成之后会创建并有效，根据此可以定制输入框的内容。相见标准控件TextField的内容
+
+//2013-11-26修改：编辑内容模式可自我提供
+property Item editItem:null  //用于editCmp加载之后的对应的item值，可在Component.onComplete时调用，进行设置
+property Component editCmp:editComponent //编辑editCmp所特别定制的样式控件。需要表明的是，此控件需要提供text属性访问编辑框的内容
+
+example：
+CMOS_InputDialog{
+        anchors.top: parent.top
+        title:"您确定吗?"
+        placeholderText:"请输入名称"
+        onAccepted: {
+            console.log("accept is result is:",value)
+        }
+        Component.onCompleted: {
+            cancleButton.text="haha"
+	    txtField.placeholderText = "test haha"
+        }
+    }
+

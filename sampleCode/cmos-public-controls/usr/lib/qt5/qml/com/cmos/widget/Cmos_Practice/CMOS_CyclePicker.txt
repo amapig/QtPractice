@@ -1,0 +1,34 @@
+公用控件之CMOS_CyclePicker.qml
+说明：picker的应用范围是很广泛的，例如时间/日期等等类似微选框的内容。本是根据CMOS系统完成的基本的单元picker，根据不同的应用，用户可以根据实际使用结合算法完成逻辑处理。其提供两种模式，一种是spinner的模式，需要提供最小值/最大值和值之间的跨度完成，另外一种是直接使用values提供值。但最后都会将所有值生成到values中。当然使用和中模式，需要valueMode进行设置，0是普通模式，即赋值values模式。1使用spinner模式。此实现是给予Pathvier的模式，且居中现实当前元素，循环选择，许多参数可以通过Pathview进行设置对应的属性。具体参数说明如下：
+
+property var values:[0,1,2,3] 需要的值，类型需要是统一的
+    property int fontSize:30 显示的字体大小
+    property color fontColor:"black"   现实字体的颜色
+    property int borderWidth: 1 背景边界的线宽
+    property color borderColor:"green" 背景边界的线的颜色
+    property color backgroundColor:"grey" 背景颜色
+    property int radius:4 背景的radius值
+
+    property int minValue: 0 //1:spin mode  微调模式下最小值
+    property int maxValue: 9 //1:spin mode  微调模式下的最大值
+    property real stepSize: 1 //1:spin mode 微调模式下的值的跨度，用于形成values值
+
+    property int valueMode:0  //0:values mode   1:spin mode 表示使用的模式
+
+    property Item backgroundItem: 背景Item，可以在创建后访问并设置相关属性
+    property Component background:背景组件，默认是rectangle，用户可以根据自己的需求进行访问
+
+function getCurValue() 获取当前值，对应values属性的值
+
+Pathview每页现实多少item内容，是根据delegate的高度和本窗口的高度进行决定的。
+
+
+example：
+CMOS_CyclePicker{
+	width:parent.width
+	height:400
+	values:["monday","tues day","wensday","thursday","friday"]
+	valueMode: 0
+}
+
+

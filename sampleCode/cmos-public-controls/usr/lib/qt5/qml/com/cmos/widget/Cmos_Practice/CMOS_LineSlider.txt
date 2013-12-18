@@ -1,0 +1,60 @@
+公用控件之CMOS_LineSlider.qml
+说明：Slider是一种输入的可拖动的控件，根据系统特定，完成适合各同时使用的控件。其主要有背景曹层，中间层（用于表示缓冲状态等使用）及前景层（最上层表示已过进度的值）以及弹出的tip控件（用于按下时现实当前值）组成，主要的使用方法见各属性说明 
+property bool middleEnabled:true 表示slider的中间层是否启用，常可以用于带有缓冲性质的状态
+property real middleValue:0 用于表示当前缓冲的值，默认为value走过的最大值，当然用户可以根据需求自己实现
+property bool foregroundEnabled:true 前景是否现实，Slider本身是没有的，是根据需求自己添加的状态效果
+property string backgroundImg:"images/borderimg.png" 背景图片，如果有图片背景使用图片，否则使用rect进行填充
+property color backgroundColor: "grey" 用于rect填充背景的颜色
+property int radius: 4用于rect填充背景的radius
+property color borderColor: "green"用于rect填充背景的边界颜色
+property int borderWidth:1用于rect填充背景的边界线宽
+
+property color middleColor: "green" 中间层表示的颜色
+property color foregroundColor: "blue" 前景色表示的颜色
+
+property int handleHeight:height*2 handle即可以拖动的手柄的宽度，默认是控件高度的两倍
+property int handleWidth:handleHeight 拖动手柄的宽度，与高度同等
+property int handleMode:0 //0:circle 1:normal 句柄的模式，使用圆形或者普通的形状。
+property string handleImg:"images/handleimg.png" 句柄的图片，如果有图片则使用图片进行背景的填充
+property color handleColor:"white" 句柄的填充颜色，如果不是图片填充时使用
+property int handleBorderWidth:1 句柄的边界线宽，如果不是图片填充时使用
+property color handleBorderColor:"white"句柄的边界颜色
+property int handleRadius:4 句柄的边界radius
+
+
+property int tipRadius:4 提示框的radius
+property color tipColor: "grey" 提示框的填充颜色
+property int tipBorderWidth:1 提示框的边界线宽
+property color tipBorderColor:"black" 提示框的边界颜色
+property string tipImg:"" 提示框图片，如果有图片则使用图片作为填充
+property bool tipEnabled:true 是否开启提示框,默认显示
+property Component tipCmp: tipComponent 提示框自动ui
+
+property int tipLeftPadding:10 提示框内容的padleft值
+property int tipTopPadding:5提示框内容的padtop值
+property int tipRightPadding:10提示框内容的padright值
+property int tipBottomPadding :5提示框内容的padbottom值
+property var tipValue:value 提示框显示的内容，默认是value值，如果想要更改相应的现实内容，则需要在value发生改变的时候更改这个值，即：
+onValueChanged: {tipValue = "j+:"+value
+            console.log("vallue:",value)
+        }
+
+example:
+    CMOS_LineSlider{
+        y:180
+        x:30
+        width:200
+        height:15
+        minimumValue: 0
+        maximumValue: 100
+        onValueChanged: {tipValue = "j+:"+value
+            console.log("vallue:",value)
+        }
+        stepSize: 2
+        value:23
+        tickmarksEnabled:true
+        updateValueWhileDragging:true
+        onPressedChanged: console.log("press changed",pressed)
+        handleWidth: 50
+        handleHeight: 50
+    }
