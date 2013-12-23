@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 2.8.1, 2013-12-17T20:35:38. -->
+<!-- Written by QtCreator 2.8.1, 2013-12-18T05:53:19. -->
 <qtcreator>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -199,8 +199,8 @@
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedFiles">
        <value type="QString">/home/skytree/workspace/exercise/testSqlLit/qml/app/qtquick20/storage.js</value>
        <value type="QString">/home/skytree/workspace/exercise/build-testSqlLite-SDK-Debug/testSqlLit</value>
-       <value type="QString">/home/skytree/workspace/exercise/testSqlLit/qml/app/qtquick20/main.qml</value>
        <value type="QString">/home/skytree/workspace/exercise/testSqlLit/testSqlLit.desktop</value>
+       <value type="QString">/home/skytree/workspace/exercise/testSqlLit/qml/app/qtquick20/main.qml</value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedHosts">
        <value type="QString">10.0.0.10</value>
@@ -211,8 +211,8 @@
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedRemotePaths">
        <value type="QString">/data/apps/0123-4567-89AB-CDEF/testSqlLit/qml/app/qtquick20</value>
        <value type="QString">/data/apps/0123-4567-89AB-CDEF/testSqlLit</value>
-       <value type="QString">/data/apps/0123-4567-89AB-CDEF/testSqlLit/qml/app/qtquick20</value>
        <value type="QString">/data/system/applications</value>
+       <value type="QString">/data/apps/0123-4567-89AB-CDEF/testSqlLit/qml/app/qtquick20</value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedSysroots">
        <value type="QString"></value>
@@ -223,8 +223,8 @@
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedTimes">
        <value type="QDateTime">2013-12-17T17:53:13</value>
        <value type="QDateTime">2013-12-17T20:31:00</value>
-       <value type="QDateTime">2013-12-17T19:49:44</value>
        <value type="QDateTime">2013-12-16T16:49:18</value>
+       <value type="QDateTime">2013-12-17T19:49:44</value>
       </valuelist>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.Incremental">true</value>
      </valuemap>
@@ -276,7 +276,7 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">testSqlLit (on Remote Device)</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">RemoteLinuxRunConfiguration:/home/skytree/workspace/exercise/testSqlLit/testSqlLit.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">RemoteLinuxRunConfiguration:/media/mengcong/workspace/codes/exercise/testSqlLit/testSqlLit.pro</value>
     <value type="QString" key="Qt4ProjectManager.MaemoRunConfiguration.Arguments"></value>
     <value type="QString" key="Qt4ProjectManager.MaemoRunConfiguration.ProFile">testSqlLit.pro</value>
     <value type="QString" key="RemoteLinux.RunConfig.AlternateRemoteExecutable"></value>

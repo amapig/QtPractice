@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/qml">
+        <file>qml/main.qml</file>
+        <file>qml/ImageButton.qml</file>
+        <file>qml/Player.qml</file>
+        <file>qml/PlayerControls.qml</file>
+        <file>qml/PlayingInterface.qml</file>
+        <file>qml/ProgressBar.qml</file>
+        <file>qml/bofang2.png</file>
+        <file>qml/bofang2-active.png</file>
+        <file>qml/houtui2.png</file>
+        <file>qml/houtui2-active.png</file>
+        <file>qml/progress_cursor_1.png</file>
+        <file>qml/progress_cursor_2.png</file>
+        <file>qml/qianjin2.png</file>
+ 	<file>qml/qianjin2-active.png</file>
+        <file>qml/zanting2.png</file>
+        <file>qml/zanting2-active.png</file>
+    </qresource>
+</RCC>

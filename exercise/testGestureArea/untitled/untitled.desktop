@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Path=/altdata/apps/0123-4567-89AB-CDEF/untitled
+Exec=/altdata/apps/0123-4567-89AB-CDEF/untitled/untitled
+#Icon=/altdata/system/icons...
+Type=Application
+Terminal=false
+Name=untitled
+#MimeType=
+
