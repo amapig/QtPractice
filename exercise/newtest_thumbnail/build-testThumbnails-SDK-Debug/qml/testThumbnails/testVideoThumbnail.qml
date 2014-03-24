@@ -5,13 +5,13 @@ Rectangle {
     width: 800
     height: 800
 
-    Image {
-        id: originImage
-        anchors.top: parent.top
-        x: 10
-        sourceSize.width: 200
-        sourceSize.height: 200
-    }
+//    Image {
+//        id: originImage
+//        anchors.top: parent.top
+//        x: 10
+//        sourceSize.width: 200
+//        sourceSize.height: 200
+//    }
 
     Thumbnail {
         id: thumbnail

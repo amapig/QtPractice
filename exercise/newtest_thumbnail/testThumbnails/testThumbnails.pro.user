@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 2.8.1, 2013-12-16T12:24:53. -->
+<!-- Written by QtCreator 2.8.1, 2013-12-30T08:17:30. -->
 <qtcreator>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -198,8 +198,8 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">RemoteLinux.DirectUploadStep</value>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedFiles">
        <value type="QString">/media/mengcong/workspace/codes/exercise/newtest_thumbnail/build-testThumbnails-SDK-Debug/testThumbnails</value>
-       <value type="QString">/media/mengcong/workspace/codes/exercise/newtest_thumbnail/testThumbnails/qml/testThumbnails/main.qml</value>
        <value type="QString">/media/mengcong/workspace/codes/exercise/newtest_thumbnail/testThumbnails/qml/testThumbnails/testVideoThumbnail.qml</value>
+       <value type="QString">/media/mengcong/workspace/codes/exercise/newtest_thumbnail/testThumbnails/qml/testThumbnails/main.qml</value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedHosts">
        <value type="QString">10.0.0.10</value>
@@ -217,8 +217,8 @@
        <value type="QString"></value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedTimes">
-       <value type="QDateTime">2013-12-16T12:00:12</value>
-       <value type="QDateTime">2013-12-16T12:00:12</value>
+       <value type="QDateTime">2013-12-24T22:38:23</value>
+       <value type="QDateTime">2013-12-24T22:38:23</value>
        <value type="QDateTime">2013-12-16T12:00:12</value>
       </valuelist>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.Incremental">true</value>

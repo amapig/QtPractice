@@ -11,7 +11,7 @@ QML_IMPORT_PATH =
 # CONFIG += mobility
 # MOBILITY +=
 
-Qt +=
+Qt += quick1
 
 # The .cpp file which was generated for your project. Feel free to hack it.
 SOURCES += main.cpp

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 2.8.1, 2013-12-19T12:21:27. -->
+<!-- Written by QtCreator 2.8.1, 2014-01-11T07:21:20. -->
 <qtcreator>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -197,8 +197,8 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">RemoteLinux.DirectUploadStep</value>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedFiles">
-       <value type="QString">/media/mengcong/workspace/codes/exercise/build-testGestureArea-SDK-Debug/testGestureArea</value>
        <value type="QString">/media/mengcong/workspace/codes/exercise/testGestureArea/qml/testGestureArea/main.qml</value>
+       <value type="QString">/media/mengcong/workspace/codes/exercise/build-testGestureArea-SDK-Debug/testGestureArea</value>
        <value type="QString">/media/mengcong/workspace/codes/exercise/testGestureArea/qml/testGestureArea/test1.qml</value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedHosts">
@@ -207,8 +207,8 @@
        <value type="QString">10.0.0.10</value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedRemotePaths">
-       <value type="QString">/opt/testGestureArea/bin</value>
        <value type="QString">/opt/testGestureArea/qml/testGestureArea</value>
+       <value type="QString">/opt/testGestureArea/bin</value>
        <value type="QString">/opt/testGestureArea/qml/testGestureArea</value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedSysroots">
@@ -217,9 +217,9 @@
        <value type="QString"></value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedTimes">
-       <value type="QDateTime">2013-12-18T06:50:26</value>
-       <value type="QDateTime">2013-12-18T06:49:55</value>
-       <value type="QDateTime">2013-12-18T06:49:55</value>
+       <value type="QDateTime">2014-01-11T07:04:46</value>
+       <value type="QDateTime">2014-01-11T07:04:46</value>
+       <value type="QDateTime">2014-01-11T07:04:46</value>
       </valuelist>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.Incremental">true</value>
      </valuemap>

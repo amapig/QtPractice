@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Path=/data/apps/0123-4567-89AB-CDEF/test-videoplayer-resource
+Exec=/data/apps/0123-4567-89AB-CDEF/test-videoplayer-resource/test-videoplayer-resource
+#Icon=/data/system/icons...
+Type=Application
+Terminal=false
+Name=test-videoplayer-resource
+#MimeType=
+

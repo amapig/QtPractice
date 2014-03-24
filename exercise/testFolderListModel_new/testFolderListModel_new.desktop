@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Path=/altdata/apps/0123-4567-89AB-CDEF/testFolderListModel_new
+Exec=/altdata/apps/0123-4567-89AB-CDEF/testFolderListModel_new/testFolderListModel_new
+#Icon=/altdata/system/icons...
+Type=Application
+Terminal=false
+Name=testFolderListModel_new
+#MimeType=
+
